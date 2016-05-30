@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStreamsLabel">Create or edit a Streams</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.streams.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.streams.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_puburl">Puburl</label>
+            <input type="text" class="form-control" name="puburl" id="field_puburl"
+                    ng-model="vm.streams.puburl"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pubkey">Pubkey</label>
+            <input type="text" class="form-control" name="pubkey" id="field_pubkey"
+                    ng-model="vm.streams.pubkey"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_privatekey">Privatekey</label>
+            <input type="text" class="form-control" name="privatekey" id="field_privatekey"
+                    ng-model="vm.streams.privatekey"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_deletekey">Deletekey</label>
+            <input type="text" class="form-control" name="deletekey" id="field_deletekey"
+                    ng-model="vm.streams.deletekey"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_format">Format</label>
+            <input type="text" class="form-control" name="format" id="field_format"
+                    ng-model="vm.streams.format"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_example">Example</label>
+            <input type="text" class="form-control" name="example" id="field_example"
+                    ng-model="vm.streams.example"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.streams.user" ng-options="user as user.login for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
