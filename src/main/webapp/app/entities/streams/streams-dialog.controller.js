@@ -11,7 +11,7 @@
         var vm = this;
         vm.streams = entity;
         //Test code goes here
-
+/*
         var test_stream =
       "title='itv'%2C&description='this+should+be+deleted+by+the+test'%2C&fields=%5B'test1'%2C+'test2'%5D%2C&tags=%5B'input+test'%5D%2C&hidden=false";
 
@@ -19,7 +19,7 @@
        $http.post("//158.85.106.208:8080/streams.json", test_stream).success(function(data, status) {
            console.log(data);
        })
-
+*/
         //ends here
         console.log(vm.streams);
         vm.users = User.query();
