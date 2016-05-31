@@ -56,6 +56,25 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="company">Company</label>
+                    <input type="text" class="form-control" id="company" name="company" placeholder="Your company name"
+                           ng-model="vm.settingsAccount.company" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                    <div ng-show="form.company.$dirty && form.company.$invalid">
+                        <p class="help-block"
+                               ng-show="form.company.$error.required">
+                            Your company name is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.$error.minlength">
+                            Your company name is required to be at least 1 character.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.$error.maxlength">
+                            Your company name cannot be longer than 50 characters.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="control-label" for="email">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Your e-mail"
                            ng-model="vm.settingsAccount.email" ng-minlength=5 ng-maxlength=100 required maxlength="100">

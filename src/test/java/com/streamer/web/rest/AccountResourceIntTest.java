@@ -150,6 +150,7 @@ public class AccountResourceIntTest {
             "password",             // password
             "Joe",                  // firstName
             "Shmoe",                // lastName
+            "Some Company",         // company
             "joe@example.com",      // e-mail
             true,                   // activated
             "en",               // langKey
@@ -178,6 +179,7 @@ public class AccountResourceIntTest {
             "password",             // password
             "Funky",                // firstName
             "One",                  // lastName
+            "Some Company",         // company
             "funky@example.com",    // e-mail
             true,                   // activated
             "en",               // langKey
@@ -206,6 +208,7 @@ public class AccountResourceIntTest {
             "password",         // password
             "Bob",              // firstName
             "Green",            // lastName
+            "Some Company",         // company
             "invalid",          // e-mail <-- invalid
             true,               // activated
             "en",               // langKey
@@ -234,6 +237,7 @@ public class AccountResourceIntTest {
             "123",              // password with only 3 digits
             "Bob",              // firstName
             "Green",            // lastName
+            "Some Company",         // company
             "bob@example.com",  // e-mail
             true,               // activated
             "en",               // langKey
@@ -263,6 +267,7 @@ public class AccountResourceIntTest {
             "password",             // password
             "Alice",                // firstName
             "Something",            // lastName
+            "Some Company",         // company
             "alice@example.com",    // e-mail
             true,                   // activated
             "en",               // langKey
@@ -273,7 +278,7 @@ public class AccountResourceIntTest {
         );
 
         // Duplicate login, different e-mail
-        ManagedUserDTO duplicatedUser = new ManagedUserDTO(validUser.getId(), validUser.getLogin(), validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
+        ManagedUserDTO duplicatedUser = new ManagedUserDTO(validUser.getId(), validUser.getLogin(), validUser.getPassword(), validUser.getLogin(), validUser.getLastName(), validUser.getComapny(),
             "alicejr@example.com", true, validUser.getLangKey(), validUser.getAuthorities(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate());
 
         // Good user
@@ -304,6 +309,7 @@ public class AccountResourceIntTest {
             "password",             // password
             "John",                 // firstName
             "Doe",                  // lastName
+            "Some Company",         // company
             "john@example.com",     // e-mail
             true,                   // activated
             "en",               // langKey
@@ -314,7 +320,7 @@ public class AccountResourceIntTest {
         );
 
         // Duplicate e-mail, different login
-        ManagedUserDTO duplicatedUser = new ManagedUserDTO(validUser.getId(), "johnjr", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
+        ManagedUserDTO duplicatedUser = new ManagedUserDTO(validUser.getId(), "johnjr", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(), validUser.getCompany(),
             validUser.getEmail(), true, validUser.getLangKey(), validUser.getAuthorities(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate());
 
         // Good user
@@ -344,6 +350,7 @@ public class AccountResourceIntTest {
             "password",             // password
             "Bad",                  // firstName
             "Guy",                  // lastName
+            "Some Company",         // company
             "badguy@example.com",   // e-mail
             true,                   // activated
             "en",               // langKey
@@ -372,6 +379,7 @@ public class AccountResourceIntTest {
             "funky-log!n",          // login <-- invalid
             "Funky",                // firstName
             "One",                  // lastName
+            "Some Company",         // company
             "funky@example.com",    // e-mail
             true,                   // activated
             "en",               // langKey

@@ -80,7 +80,7 @@ public class UserService {
             });
     }
 
-    public User createUserInformation(String login, String password, String firstName, String lastName, String email,
+    public User createUserInformation(String login, String password, String firstName, String lastName, String company, String email,
         String langKey) {
 
         User newUser = new User();
@@ -93,6 +93,7 @@ public class UserService {
         newUser.setFirstName(firstName);
         newUser.setLastName(lastName);
         newUser.setEmail(email);
+        newUser.setCompany(company);
         newUser.setLangKey(langKey);
         // new user is not active
         newUser.setActivated(false);
@@ -110,6 +111,7 @@ public class UserService {
         user.setLogin(managedUserDTO.getLogin());
         user.setFirstName(managedUserDTO.getFirstName());
         user.setLastName(managedUserDTO.getLastName());
+        user.setCompany(managedUserDTO.getCompany());
         user.setEmail(managedUserDTO.getEmail());
         if (managedUserDTO.getLangKey() == null) {
             user.setLangKey("en"); // default language

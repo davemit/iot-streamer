@@ -40,9 +40,9 @@ public class ManagedUserDTO extends UserDTO {
         this.password = null;
     }
 
-    public ManagedUserDTO(Long id, String login, String password, String firstName, String lastName,
+    public ManagedUserDTO(Long id, String login, String password, String firstName, String lastName, String company,
                           String email, boolean activated, String langKey, Set<String> authorities , ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate ) {
-        super(login, firstName, lastName, email, activated, langKey, authorities);
+        super(login, firstName, lastName, company, email, activated, langKey, authorities);
         this.id = id;
         this.createdDate = createdDate;
         this.lastModifiedBy = lastModifiedBy;
@@ -95,4 +95,9 @@ public class ManagedUserDTO extends UserDTO {
             ", lastModifiedDate=" + lastModifiedDate +
             "} " + super.toString();
     }
+
+	public String getComapny() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
